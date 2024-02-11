@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="hello.html">Hello</a>
+    <script>
+
+        let objStud = { "name": "John", "marks": [3, 4, 5] };
+        let serStud = JSON.stringify(objStud);// сериализация
+        localStorage.setItem("stud", serStud); // сохранение в localStorage
+        sessionStorage.setItem('key', 'value');
+    </script>
+</body>
+
+</html>
