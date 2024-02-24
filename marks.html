@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <a href="marks-average.html">Show average</a>
+    <form name="marks" method="GET" onSubmit="return saveMarks(this)">
+      Введите имя: <input type="text" name="name" size="15" /><br />
+      Введите оценки:<br />
+      Java <input type="text" name="m1" size="4" /><br />
+      PHP <input type="text" name="m2" size="4" /><br />
+      JavaScript <input type="text" name="m3" size="4" /><br />
+      <input type="submit" value="Сохранить" name="save" /><br />
+      <a href="marks-average.html">Перейти на страницу оценок</a>
+    </form>
+    <script>
+      function saveMarks(f) {
+        const userName = f.name.value;
+        if (userName == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+        let stud = {};
+        stud.name = userName;
+        stud.marks = [f.m1.value, f.m2.value, f.m3.value];
+        alert(stud.name + " " + stud.marks);
+        localStorage.setItem("stud", JSON.stringify(stud));
+        // alert(f.name.value);
+        // alert(f.m1.value);
+        // alert(f.m2.value);
+        // alert(f.m3.value);
+      }
+    </script>
+  </body>
+</html>
